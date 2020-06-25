@@ -9,7 +9,7 @@ const corsMiddleware = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const pokemonRouter = require('./routes/pokemon.js');
-const loginRouter = require('.routes/login');
+const loginRouter = require('./routes/login');
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
